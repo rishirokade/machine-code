@@ -1,0 +1,51 @@
+.pageBox {
+    margin: 50px;
+}
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+.product-card {
+    display: flex;
+    width: 180px;
+    height: 180px;
+    padding: 20px;
+    border: 1px solid black;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+.product-card:hover {
+    transform: scale(1.05);
+}
+.product-img {
+    width: 150px;
+    height: 150px;
+}
+
+.pagination {
+    margin: 8px;
+    padding: 12px;
+}
+
+.page-number {
+    border: 1px solid black;
+    margin: 8px;
+    padding: 8px;
+    /* By default, <span> elements are inline, 
+    which does not allow certain properties like transform (e.g., scaling) 
+    to work correctly. Changing it to inline-block makes the 
+    span behave like a block element while still being inline, 
+    enabling CSS transformations like scale */
+    display: inline-block;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.page-number:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.active {
+    border: 2px solid rgb(113, 7, 227);
+    transform: scale(1.2);
+}
