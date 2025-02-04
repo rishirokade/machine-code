@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
 
-type ProductType = {
+export type ProductType = {
     id: number;
     title: string;
     images: string[];
-}[];
-export const useFetchProduct = () => {
-    const [productData, setProductData] = useState<ProductType>([]);
+
+};
+export const useFetchProduct = ({ limit, skip }: {
+    limit?: number, skip?: number
+}) => {
+    const [productData, setProductData] = useState<ProductType[]>([]);
     const [loading, setLoading] = useState(false)
     const fetchProductData = async () => {
         try {
             setLoading(true);
-            const data = await fetch("https://dummyjson.com/product?limit=500");
+            const data = await fetch(`https://dummyjson.com/products?limit=${limit ? limit : 500}&skip=${skip ? skip : 0}`);
             const userData = await data.json();
             setProductData(userData?.products);
         } catch (_error) {
