@@ -1,13 +1,16 @@
 import "./App.css";
-import { ProductVirtualization } from "./components/virtualization";
+import AnalogClock from "./components/AnalogClock";
 
 function App() {
     return (
-        <div className="pageBox">
-            {/* <FetchProductUsingPagination /> */}
-            {/* <FetchProductUsingThrottling /> */}
-            <ProductVirtualization />
-        </div>
+        <>
+            <div>
+                <h1 style={{ textAlign: "center" }}>Analog Clock</h1>
+                <AnalogClock />
+            </div>
+            {/* <TrafficSignal />
+            <TickTackTiq /> */}
+        </>
     );
 }
 
