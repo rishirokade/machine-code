@@ -1,16 +1,16 @@
 import "./App.css";
-import AnalogClock from "./components/AnalogClock";
+import { ThemeProvider } from "./components/theme/ThemeProvider";
+import { ThemeSwitcher } from "./components/theme/ThemeSwitcher";
 
 function App() {
     return (
-        <>
-            <div>
+        <ThemeProvider>
+            {/* <div>
                 <h1 style={{ textAlign: "center" }}>Analog Clock</h1>
                 <AnalogClock />
-            </div>
-            {/* <TrafficSignal />
-            <TickTackTiq /> */}
-        </>
+            </div> */}
+            <ThemeSwitcher></ThemeSwitcher>
+        </ThemeProvider>
     );
 }
 

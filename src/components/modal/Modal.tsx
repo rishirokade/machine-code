@@ -14,23 +14,24 @@ export const Modal: React.FC<{
                 left: 0,
                 width: "100%",
                 height: "100%",
+                zIndex: 1000,
                 backgroundColor: "rgba(24, 120, 120, 0.5)",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                zIndex: 1000,
             }}
             onClick={onClose}
         >
             <div
                 style={{
+                    position: "relative",
                     backgroundColor: "white",
                     padding: "20px",
                     borderRadius: "10px",
                     textAlign: "center",
-                    position: "relative",
                     ...style,
                 }}
+                // allow to click only on targeted div
                 onClick={(e) => e.stopPropagation()}
             >
                 {children}
